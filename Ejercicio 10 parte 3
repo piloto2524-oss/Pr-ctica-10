@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int lista[10][10]; // Arreglo multidimensional
+    int i, j;
+    int renglon, columna;
+
+    printf("\nDa el número de renglones y columnas separados con coma, ");
+    printf("cuyo valor no sea mayor a 10: ");
+    scanf("%d, %d", &renglon, &columna);
+
+    // Validación
+    if ( (renglon >= 1 && renglon <= 10) && (columna >= 1 && columna <= 10) ) {
+
+        // Llenado del arreglo multidimensional
+        for (i = 0; i < renglon; i++) {
+            for (j = 0; j < columna; j++) {
+                printf("\nNúmero para el elemento [%d][%d]: ", i, j);
+                scanf("%d", &lista[i][j]);
+            }
+        }
+
+        // Impresión del arreglo
+        printf("\nLos valores dados son:\n");
+        for (i = 0; i < renglon; i++) {
+            for (j = 0; j < columna; j++) {
+                printf("%d ", lista[i][j]); // ← AQUÍ FALTABA EL %d
+            }
+            printf("\n");
+        }
+
+    } else {
+        printf("Los valores no son válidos\n");
+    }
+
+    return 0;
+}
